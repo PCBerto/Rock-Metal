@@ -1,0 +1,357 @@
+/* ===================
+   CONFIGURAÇÕES
+======================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0b0b0b;
+    color: #eeeeee;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   CABEÇALHO E MENU
+======================================== */
+
+header {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.95)
+        );
+
+    border-bottom: 1px solid #292929;
+}
+
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #0b0b0b;
+
+    padding: 15px 50px;
+}
+
+
+nav h2 {
+    color: #e31b23;
+
+    font-size: 22px;
+    letter-spacing: 4px;
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+
+    list-style: none;
+}
+
+nav a {
+    color: #cccccc;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #e31b23;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    min-height: calc(100vh - 80px);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.hero p:first-child {
+    color: #e31b23;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(80px, 15vw, 190px);
+
+    line-height: 0.78;
+
+    letter-spacing: -8px;
+
+    font-weight: 900;
+
+    margin-bottom: 45px;
+}
+
+.hero p:last-child {
+    max-width: 550px;
+
+    color: #999999;
+
+    font-size: 18px;
+}
+
+
+/* ========================================
+   CONTEÚDO
+======================================== */
+
+main {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+section {
+    padding: 120px 0;
+
+    border-bottom: 1px solid #292929;
+}
+
+.numero-secao {
+    color: #e31b23;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+section > h2 {
+    font-size: clamp(40px, 6vw, 70px);
+
+    line-height: 1;
+
+    margin-bottom: 30px;
+
+    letter-spacing: -2px;
+}
+
+section > p:not(.numero-secao) {
+    max-width: 750px;
+
+    color: #aaaaaa;
+
+    font-size: 17px;
+
+    margin-bottom: 30px;
+}
+
+
+/* ========================================
+   ARTISTAS
+======================================== */
+
+.artistas {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin-top: 60px;
+}
+
+.artistas > div {
+    background-color: #141414;
+
+    padding: 35px;
+
+    border: 1px solid #292929;
+
+    transition: 0.3s;
+}
+
+.artistas > div:hover {
+    border-color: #e31b23;
+
+    transform: translateY(-5px);
+}
+
+.artistas h3 {
+    font-size: 27px;
+
+    margin-bottom: 12px;
+}
+
+.artistas p {
+    color: #888888;
+
+    font-size: 15px;
+}
+
+
+/* ========================================
+   SUBGÊNEROS
+======================================== */
+
+.generos {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin-top: 60px;
+}
+
+.generos > div {
+    padding: 30px;
+
+    background-color: #141414;
+
+    border-left: 3px solid #e31b23;
+
+    transition: 0.3s;
+}
+
+.generos > div:hover {
+    background-color: #1b1b1b;
+
+    transform: translateX(6px);
+}
+
+.generos h3 {
+    font-size: 23px;
+
+    margin-bottom: 8px;
+}
+
+.generos p {
+    color: #888888;
+
+    font-size: 14px;
+}
+
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+footer {
+    padding: 120px 20px;
+
+    text-align: center;
+
+    background-color: #080808;
+}
+
+footer h2 {
+    font-size: clamp(40px, 8vw, 90px);
+
+    letter-spacing: -3px;
+
+    margin-bottom: 20px;
+}
+
+footer p {
+    color: #555555;
+
+    font-size: 13px;
+}
+
+footer img {
+    width: 100px;
+    height: auto;
+    margin-top: 25px;
+    opacity: 0.8;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 800px) {
+
+    nav {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 90px;
+
+        letter-spacing: -5px;
+    }
+
+    .artistas {
+        grid-template-columns: 1fr;
+    }
+
+    .generos {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .hero h1 {
+        font-size: 65px;
+    }
+
+    section {
+        padding: 80px 0;
+    }
+
+    section > h2 {
+        font-size: 40px;
+    }
+
+}
